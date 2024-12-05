@@ -1,14 +1,7 @@
-<script>
-import ChildComponent from "./ChildComponent.vue";
-export default {
-  components: {ChildComponent}
-}
+<script setup>
 </script>
-
 <template>
-<ChildComponent></ChildComponent>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
-
-<style scoped>
-
-</style>
