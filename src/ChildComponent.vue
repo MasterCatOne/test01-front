@@ -47,9 +47,10 @@ const search=function (){
     tableData.value=res.data.item
   })
 }
-onMounted(
-    search()
-)
+onMounted(() => {
+  search();
+});
+
 </script>
 
 <template>

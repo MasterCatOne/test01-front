@@ -1,5 +1,12 @@
 <script setup>
 import {Avatar, UploadFilled} from "@element-plus/icons-vue";
+import router from "../../router/router";
+const loginOut = () => {
+  //清除token
+  localStorage.removeItem('token');
+  //跳转路由
+  router.push('/login');
+}
 </script>
 
 <template>
@@ -10,7 +17,7 @@ import {Avatar, UploadFilled} from "@element-plus/icons-vue";
         <img class="w-10 h-10 rounded-full" src="@/assets/logo.png">
         <h2 class="text-white ml-2">后台管理系统</h2>
       </div>
-      <el-button type="primary" class="mt-3">退出</el-button>
+      <el-button @click="loginOut" type="primary" class="mt-3">退出</el-button>
     </el-header>
     <el-container>
       <!--侧边边栏-->
@@ -33,7 +40,7 @@ import {Avatar, UploadFilled} from "@element-plus/icons-vue";
               </el-icon>
               <span>文件管理</span>
             </template>
-            <el-menu-item index="/file">文件列表</el-menu-item>
+            <el-menu-item index="/child">文件列表</el-menu-item>
           </el-sub-menu>
         </el-menu>
       </el-aside>

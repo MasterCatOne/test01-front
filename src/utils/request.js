@@ -9,8 +9,8 @@ const instance = axios.create({
     timeout: 8000, // 请求超时时间
     headers: {
         "Content-Type": "application/json; charset=utf-8",// 设置请求头的 Content-Type 为 application/json
-       // "token": localStorage.getItem("token"), // 如果需要的话可以添加认证信息
-        "token":"noveleyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW1vIiwiaWQiOiIyNyIsIm5hbWUiOiLmooXlm73pppkiLCJlbWFpbCI6IjEyM0BxcS5jb20iLCJpYXQiOjE3MzMyOTg4NjMsImV4cCI6MTczNTA1MTg5Nn0.iyraeLpFN_clrSW2kYjhd6PxPqR_3Ubq-2MURAwOZRI"
+       "token": localStorage.getItem("token"), // 如果需要的话可以添加认证信息
+       //  "token":"noveleyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW1vIiwiaWQiOiIyNyIsIm5hbWUiOiLmooXlm73pppkiLCJlbWFpbCI6IjEyM0BxcS5jb20iLCJpYXQiOjE3MzMyOTg4NjMsImV4cCI6MTczNTA1MTg5Nn0.iyraeLpFN_clrSW2kYjhd6PxPqR_3Ubq-2MURAwOZRI"
     },
 });
 

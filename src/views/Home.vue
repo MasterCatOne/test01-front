@@ -1,7 +1,11 @@
-<script setup>
+<script>
+import ChildComponent from "../ChildComponent.vue";
+export default {
+  components: {ChildComponent}
+}
 </script>
 <template>
-  <h1>欢迎页面</h1>
+<!-- <ChildComponent></ChildComponent>-->
 </template>
 <style scoped>
 </style>

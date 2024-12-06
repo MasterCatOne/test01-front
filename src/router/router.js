@@ -23,6 +23,11 @@ const router = createRouter({
                     component: () => import("@/views/user/UserList.vue"),
                 },
                 {
+                    path: "/child",
+                    name: "child",
+                    component: () => import("@/ChildComponent.vue"),
+                },
+                {
                     path: "/file",
                     name: "file",
                     component: () => import("@/views/file/FileList.vue"),
@@ -42,5 +47,32 @@ const router = createRouter({
             meta: {title: "注册页面"},
         },
     ],
+});
+router.beforeEach((to, from, next) => {
+    /**
+     * to:   要到哪个路由
+     * from: 当前路由
+     * next: 只有执行next页面才会跳转
+     */
+    console.log("目标路由：", to, "当前路由：", from)
+
+    //从localstorage中获取token
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        //localstorage中不存在token
+        if (to.path === "/login") {
+            next();
+            return;
+        }
+        if (to.path === "/register") {
+            next();
+            return;
+        }
+        next("/login");
+    } else {
+        //localstorage中存在token
+        next();
+    }
 });
 export default router;
