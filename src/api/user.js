@@ -34,3 +34,11 @@ export const userPageApi = (data) => {
         data,
     });
 };
+// 添加用户
+export const userAddApi = (data) => {
+    return post({
+        // 请求的地址
+        url: "/api/user/register",
+        data,
+    });
+};
